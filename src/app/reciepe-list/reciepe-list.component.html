@@ -1,0 +1,37 @@
+<!-- Recipe List Page HTML inspired by provided images -->
+<div class="recipe-list-container">
+  <header class="recipe-header">
+    <h1>GastroTerreta</h1>
+    <p>Recetas tradicionales valencianas</p>
+    <div class="search-explore">
+      <button class="explore-btn">Explorar</button>
+      <input type="search" placeholder="Buscar" aria-label="Buscar recetas" />
+    </div>
+  </header>
+
+  <section class="popular-recipes">
+    <h2>Recetas populares</h2>
+    <div class="recipes-grid">
+      <div class="recipe-card" *ngFor="let recipe of popularRecipes; let i = index">
+        <img [src]="recipe.img" [alt]="recipe.title" />
+        <h3>{{ recipe.title }}</h3>
+        <p>{{ recipe.description }}</p>
+        <p><strong>Duración:</strong> {{ recipe.duration }}</p>
+        <p><strong>Ingredientes:</strong></p>
+        <ul>
+          <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+        </ul>
+        <button (click)="toggleSteps(i)">
+          {{ expandedRecipeIndex === i ? 'Ocultar pasos' : 'Mostrar pasos' }}
+        </button>
+        <div *ngIf="expandedRecipeIndex === i" class="steps-dropdown">
+          <div *ngFor="let step of recipe.steps" class="step-card">
+            <h4>{{ step.name }}</h4>
+            <img [src]="step.img" [alt]="step.name" />
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
