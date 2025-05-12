@@ -1,0 +1,224 @@
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: #fdfaf6;
+  color: #3d3d3d;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: #fff;
+}
+
+.logo-img {
+  height: auto;
+  width: 70%;
+}
+
+
+
+nav {
+  display: flex;
+  gap: 30px; 
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: #3d3d3d;
+  font-weight: 500;
+
+  padding-bottom: 5px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #9b2049de;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+main {
+  padding: 50px 8%;
+}
+
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+}
+
+.hero input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.mapa-img,
+.mapa-full {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  flex: 1 1 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.card p {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+button {
+  background: #f0e7d8;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+button:hover {
+  background: #d9cbb6;
+}
+
+/*boton receta video*/
+.button-link {
+  display: inline-block;
+  background: #f0e7d8;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 0.9em;
+}
+
+.button-link:hover {
+  background: #d9cbb6;
+}
+
+/*carrousel*/
+.carousel-wrapper {
+  position: relative;
+  max-width: 820px; /* 3 cards * 260px */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.card {
+  flex: 0 0 260px;
+  margin-right: 20px;
+}
+
+
+/*mapa*/
+.mapa-container {
+  position: relative;
+  width: 300px;  /* tamaño fijo para mapa + botones */
+}
+
+.mapa-img {
+  width: 100%;
+  display: block;
+}
+
+.map-btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/* Ajusta estas zonas manualmente según tu imagen */
+/* Botones invisibles, ajusta estas posiciones según el mapa real */
+.castellon {
+  top: 5%;
+  left: 35%;
+  width: 30%;
+  height: 25%;
+}
+
+.valencia {
+  top: 35%;
+  left: 35%;
+  width: 30%;
+  height: 30%;
+}
+
+.alicante {
+  top: 70%;
+  left: 35%;
+  width: 30%;
+  height: 25%;
+}
+
+.map-btn:hover {
+  outline: 2px solid #9b2049de;
+}
+
+
+
