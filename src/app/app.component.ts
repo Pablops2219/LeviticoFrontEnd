@@ -4,6 +4,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ProductosLocalesComponent } from "./productos-locales/productos-locales.component";
 
+
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, FooterComponent, ProductosLocalesComponent],
