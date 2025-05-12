@@ -1,50 +1,113 @@
-/* Header styles with warm, rustic theme */
+.titulo{
+  width: 90%;
+}
 
-.app-header {
+.primero {
+  padding-left: 5%;
+  background-color: rgba(250, 233, 198, 0.808);
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  background-color: #f5efe0;
-  padding: 12px 16px;
-  box-shadow: 0 2px 6px rgba(74, 74, 44, 0.15);
-  font-family: 'Georgia', serif;
-  color: #4a4a2c;
+  position: relative;
+  flex-wrap: wrap;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo img {
-  width: 40px;
-  height: 40px;
-}
-
-.logo h1 {
-  font-size: 1.5rem;
+.primero-1 h1 {
   margin: 0;
-  font-weight: 700;
 }
 
-.nav-links {
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.primero-2 {
+  height: 80px;
+  flex-grow: 1;
+  padding-right: 3%;
   display: flex;
-  gap: 24px;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
-.nav-links a {
+.primero-2 a {
   text-decoration: none;
-  color: #4a4a2c;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 6px 8px;
-  border-radius: 8px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100px;
   transition: background-color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: #c75c2c;
-  color: #fff6e5;
+.primero-2 a:hover {
+  background-color: #8ebb9f;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.primero-2 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+/* Estilo cuando el menú está abierto */
+.hamburger.active {
+  background-color: #8ebb9f; 
+  color: white;              
+}
+
+@media (max-width: 768px) {
+
+  .titulo{
+    width: 70%;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .primero-2 {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(250, 233, 198, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .primero-2 a {
+    width: 100%;
+    padding: 10px;
+    height: auto;
+  }
+
+  .primero-2 ul {
+    justify-content: flex-start;
+  }
+
+  .primero-2.show {
+    display: flex;
+  }
 }

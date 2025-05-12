@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ReciepeListComponent } from './reciepe-list/reciepe-list.component';
-import { MainNoeComponent } from './main-noe/main-noe.component';
+
+import { MainComponent } from './component/main/main.component';
+import { ProductosLocalesComponent } from './component/productos-locales/productos-locales.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+    {path: '', component: MainComponent},
+    {path: 'productos-locales', component: ProductosLocalesComponent},
   { path: 'recipes', component: ReciepeListComponent },
   { path: 'main-noe', component: MainNoeComponent }
+    
 ];
