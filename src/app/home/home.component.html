@@ -1,0 +1,53 @@
+<!-- Home Page HTML inspired by provided images -->
+<div class="home-container">
+  <header class="header">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Gastro Terreta Logo" />
+      <h1>Gastro Terreta</h1>
+    </div>
+    <nav class="nav-icons">
+      <div class="nav-item">
+        <img src="assets/icons/recipes.svg" alt="Recetas" />
+        <span>Recetas</span>
+      </div>
+      <div class="nav-item">
+        <img src="assets/icons/restaurants.svg" alt="Restaurantes" />
+        <span>Restaurantes</span>
+      </div>
+      <div class="nav-item">
+        <img src="assets/icons/shops.svg" alt="Tiendas" />
+        <span>Tiendas</span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="famous-dishes">
+    <h2>Platos más famosos</h2>
+    <div class="dish-list">
+      <div class="dish-card" *ngFor="let dish of famousDishes">
+        <img [src]="dish.img" [alt]="dish.name" />
+        <p>{{ dish.name }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stories">
+    <h2>Historias de la Terreta</h2>
+    <div class="story-list">
+      <div class="story-card" *ngFor="let story of stories">
+        <img [src]="story.img" [alt]="story.title" />
+        <h3>{{ story.title }}</h3>
+        <p>{{ story.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="season-calendar">
+    <h2>Calendario de temporada</h2>
+    <div class="season-list">
+      <div class="season-item" *ngFor="let season of seasonalCalendar">
+        <img [src]="season.icon" [alt]="season.alt" />
+      </div>
+    </div>
+  </section>
+</div>
