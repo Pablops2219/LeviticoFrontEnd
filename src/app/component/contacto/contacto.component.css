@@ -5,24 +5,32 @@ body {
   color: #333;
 }
 
-.contacto-container {
-  padding: 2rem;
-  max-width: 960px;
+/* ====== CONTENEDOR FLEX ====== */
+.contacto-grid {
+  display: flex;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
   margin: auto;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-h2 {
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  text-align: center;
-  color: #9b2049de;
-}
-
+/* ====== FORMULARIO ====== */
 .form-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex: 1 1 450px;
+  background-color: #fff;
+  border-radius: 12px;
   padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  margin-top: 10%;
+}
+
+.form h2 {
+  margin-bottom: 1.5rem;
+  color: #9b2049de;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .form {
@@ -35,7 +43,12 @@ h2 {
   background-color: #f5ebdc;
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e4d3b2;
+  transition: border 0.3s ease;
+}
+
+.form-field:focus-within {
+  border-color: #d89e54;
 }
 
 .input-field {
@@ -50,21 +63,106 @@ h2 {
 
 textarea.input-field {
   resize: vertical;
+  min-height: 100px;
 }
 
 .enviar-btn {
   background-color: #d89e54;
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.6rem;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
   align-self: flex-end;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .enviar-btn:hover {
   background-color: #b8792f;
+  transform: translateY(-1px);
+}
+
+/* ====== INFO ====== */
+.info-card {
+  flex: 1 1 480px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.info-card h3 {
+  color: #9b2049de;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.info-card h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #9b2049de;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.info-card p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.info-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.info-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+.info-list li::before {
+  content: "📌 ";
+  margin-right: 0.5rem;
+  color: #d89e54;
+}
+
+.curiosidades li::before {
+  content: "📍 ";
+  color: #b94e4e;
+}
+
+.footer-signature {
+  margin-top: 2rem;
+  font-style: italic;
+  text-align: center;
+  color: #d89e54;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .contacto-grid {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .form-card, .info-card {
+    width: 100%;
+  }
+
+  .form h2 {
+    text-align: center;
+  }
+
+  .enviar-btn {
+    align-self: stretch;
+  }
 }
