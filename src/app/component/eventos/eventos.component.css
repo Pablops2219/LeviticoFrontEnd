@@ -97,3 +97,86 @@ li:hover:nth-child(n+8):nth-child(-n+38), li:nth-child(17){
   color: #ecf0f1;
 }
 
+
+
+/*Calendar nuevo*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+.calendar {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  margin: 3rem auto;
+  border-radius: 10px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.month i {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #9b2049de;
+}
+
+.date {
+  text-align: center;
+}
+
+.date h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #9b2049de;
+}
+
+.date p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 10px;
+  color: #d89e54;
+  font-weight: 600;
+  text-align: center;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.days div {
+  padding: 10px;
+  border-radius: 8px;
+  background: #fdf6ec;
+  transition: background 0.2s ease;
+}
+
+.days div:hover {
+  background: #f5ebdc;
+  cursor: pointer;
+}
+
+.today {
+  background: #d89e54 !important;
+  color: white;
+}
+
+.prev-date,
+.next-date {
+  color: #bbb;
+}
+
+
