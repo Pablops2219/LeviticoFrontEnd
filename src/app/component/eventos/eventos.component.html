@@ -1,0 +1,16 @@
+<div class="eventos-container">
+  <h2>Eventos gastronómicos en Valencia</h2>
+
+  <!-- Mapa de Google -->
+  <div id="map" class="google-map"></div>
+
+  <!-- Grid de eventos -->
+  <div class="eventos-grid">
+    <div class="evento-card" *ngFor="let evento of eventos">
+      <img [src]="evento.imagen" [alt]="evento.titulo" />
+      <h3>{{ evento.titulo }}</h3>
+      <p>{{ evento.descripcion }}</p>
+      <p><strong>Fecha:</strong> {{ evento.fecha }}</p>
+    </div>
+  </div>
+</div>

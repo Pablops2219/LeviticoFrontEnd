@@ -5,6 +5,8 @@ import { ProductosLocalesComponent } from './component/productos-locales/product
 import { ReciepeListComponent } from './component/reciepe-list/reciepe-list.component';
 import { MainNoeComponent } from './component/main-noe/main-noe.component';
 import { HomeComponent } from './component/home/home.component';
+import { EventosComponent } from './component/eventos/eventos.component';
+import { ContactoComponent } from './component/contacto/contacto.component';
 
 export const routes: Routes = [
   { path: '', component: MainNoeComponent },
@@ -14,4 +16,6 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'reciepe-list', component: ReciepeListComponent },
   { path: 'main', component: MainComponent },
+  { path: 'eventos', component: EventosComponent },
+  { path: 'contacto', component: ContactoComponent },
 ];
