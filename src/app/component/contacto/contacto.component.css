@@ -28,7 +28,7 @@ body {
 
 .form h2 {
   margin-bottom: 1.5rem;
-  color: #9b2049de;
+  color: #8EBB9F;
   font-size: 1.6rem;
   font-weight: 600;
 }
@@ -93,8 +93,10 @@ textarea.input-field {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
 }
 
+
+
 .info-card h3 {
-  color: #9b2049de;
+  color: #8EBB9F;
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -102,7 +104,7 @@ textarea.input-field {
 .info-card h4 {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: #9b2049de;
+  color: #8EBB9F;
   font-size: 1.1rem;
   font-weight: 600;
 }
