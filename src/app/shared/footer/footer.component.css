@@ -1,0 +1,11 @@
+/* Footer styles with warm, rustic theme */
+
+.app-footer {
+  background-color: #f5efe0;
+  padding: 16px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #4a4a2c;
+  box-shadow: 0 -2px 6px rgba(74, 74, 44, 0.15);
+  font-size: 0.9rem;
+}

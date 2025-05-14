@@ -1,0 +1,46 @@
+<div class="recipe-list-container">
+  <div class="header-section">
+    <header class="recipe-header">
+      <h1>GastroTerreta</h1>
+      <p>Recetas tradicionales valencianas</p>
+    </header>
+    <div class="search-bar-container">
+      <input type="search" placeholder="Buscar" aria-label="Buscar recetas" />
+      <button class="explore-btn">Explorar</button>
+    </div>
+  </div>
+
+  <section class="popular-recipes">
+    <h2>Recetas populares</h2>
+    <div class="recipes-column">
+      <div class="recipe-card" *ngFor="let recipe of popularRecipes; let i = index">
+        <div class="recipe-card-content">
+          <img [src]="recipe.img" [alt]="recipe.title" class="recipe-image" />
+          <div class="recipe-info">
+            <h3>{{ recipe.title }}</h3>
+            <p>{{ recipe.description }}</p>
+            <p><strong>Duración:</strong> {{ recipe.duration }}</p>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+              <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+            </ul>
+          </div>
+        </div>
+        <button (click)="toggleSteps(i)" class="toggle-steps-btn">
+          {{ expandedRecipeIndex === i ? 'Ocultar pasos' : 'Mostrar pasos' }}
+        </button>
+        <div *ngIf="expandedRecipeIndex === i" class="steps-dropdown">
+          <div *ngFor="let step of recipe.steps" class="step-card">
+            <div class="step-card-content">
+              <img [src]="step.img" [alt]="step.name" class="step-image" />
+              <div class="step-info">
+                <h4>{{ step.name }}</h4>
+                <p>{{ step.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

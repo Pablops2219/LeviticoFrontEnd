@@ -1,1 +1,23 @@
+<<<<<<< HEAD
 /* You can add global styles to this file, and also import other style files */
+=======
+/* Global base styles for warm, rustic theme */
+
+body {
+  margin: 0;
+  background-color: #f5efe0;
+  font-family: 'Georgia', serif;
+  color: #4a4a2c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+>>>>>>> 7f9cc7298ad01dde131254b92a4c42c4f713b4d8

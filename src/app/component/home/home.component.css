@@ -1,0 +1,174 @@
+/* Home Page Styles inspired by provided images */
+
+.home-container {
+  background-color: #f5efe0;
+  padding: 16px;
+  font-family: 'Georgia', serif;
+  color: #4a4a2c;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #4a4a2c;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #4a4a2c;
+  cursor: pointer;
+}
+
+.nav-item img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.famous-dishes h2,
+.stories h2,
+.season-calendar h2 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #4a4a2c;
+}
+
+.dish-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.dish-card {
+  background-color: #fff6e5;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(74, 74, 44, 0.15);
+  flex: 0 0 100px;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.dish-card:hover {
+  transform: scale(1.05);
+}
+
+.dish-card img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 80px;
+  margin-bottom: 6px;
+}
+
+.dish-card p {
+  font-size: 0.8rem;
+  color: #4a4a2c;
+  margin: 0;
+}
+
+.stories {
+  margin-top: 24px;
+}
+
+.story-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.story-card {
+  background-color: #fff6e5;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(74, 74, 44, 0.15);
+  flex: 0 0 180px;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.story-card:hover {
+  transform: scale(1.05);
+}
+
+.story-card img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 100px;
+  margin-bottom: 8px;
+}
+
+.story-card h3 {
+  font-size: 1rem;
+  margin: 0 0 6px 0;
+  color: #4a4a2c;
+}
+
+.story-card p {
+  font-size: 0.75rem;
+  color: #6b6b4d;
+  margin: 0;
+}
+
+.season-calendar {
+  margin-top: 24px;
+}
+
+.season-list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.season-item {
+  background-color: #fff6e5;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(74, 74, 44, 0.15);
+  flex: 0 0 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.season-item:hover {
+  transform: scale(1.1);
+}
+
+.season-item img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
