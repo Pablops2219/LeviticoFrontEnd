@@ -1,7 +1,8 @@
 .titulo{
-  width: 90%;
+  width: 30%;
+  height: auto;
 }
-
+ 
 .primero {
   padding-left: 5%;
   background-color: rgba(250, 233, 198, 0.808);
@@ -11,28 +12,29 @@
   position: relative;
   flex-wrap: wrap;
 }
-
+ 
 .primero-1 h1 {
   margin: 0;
 }
-
+ 
 .hamburger {
   display: none;
   font-size: 28px;
   cursor: pointer;
   padding: 20px;
 }
-
+ 
 .primero-2 {
   height: 80px;
   flex-grow: 1;
   padding-right: 3%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
+  margin-right: 2%;
 }
-
+ 
 .primero-2 a {
   text-decoration: none;
   color: inherit;
@@ -43,13 +45,13 @@
   width: 100px;
   transition: background-color 0.3s ease;
 }
-
+ 
 .primero-2 a:hover {
   background-color: #8ebb9f;
   color: rgb(255, 255, 255);
   font-weight: bold;
 }
-
+ 
 .primero-2 ul {
   list-style: none;
   margin: 0;
@@ -59,31 +61,73 @@
   align-items: center;
   justify-content: center;
 }
-
+ 
 .hamburger {
   display: none;
   font-size: 28px;
   cursor: pointer;
   padding: 20px;
   transition: background-color 0.3s, color 0.3s;
-
+ 
 }
-
+ 
 /* Estilo cuando el menú está abierto */
 .hamburger.active {
-  background-color: #8ebb9f; 
+  background-color: #8ebb9f;
   color: white;              
 }
-
+ 
+ 
+/*css social links*/
+/* Redes sociales centradas en el header */
+.social-icons {
+  display: flex;
+  justify-content: center;   /* CENTRAR horizontalmente */
+  align-items: center;
+  gap: 15px;
+  height: 80px;
+  flex: 1;
+  margin-left: 10%;
+}
+ 
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  background-color: #8EBB9F;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+ 
+.social-icons a svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+ 
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+ 
+/* RESPONSIVE: ocultar en móvil si no caben */
 @media (max-width: 768px) {
-
+  .social-icons {
+    display: none;
+  }
+}
+ 
+ 
+@media (max-width: 768px) {
+ 
   .titulo{
     width: 70%;
   }
   .hamburger {
     display: block;
   }
-
+ 
   .primero-2 {
     display: none;
     flex-direction: column;
@@ -96,17 +140,17 @@
     height: auto;
     padding: 10px 0;
   }
-
+ 
   .primero-2 a {
     width: 100%;
     padding: 10px;
     height: auto;
   }
-
+ 
   .primero-2 ul {
     justify-content: flex-start;
   }
-
+ 
   .primero-2.show {
     display: flex;
   }
