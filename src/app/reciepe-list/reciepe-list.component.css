@@ -1,41 +1,43 @@
 /* Recipe List Page Styles inspired by provided images */
 
 .recipe-list-container {
-  background-color: #f5efe0;
-  padding: 16px;
+  background-color: #f9f5ec; /* Slightly lighter warm beige */
+  padding: 24px;
   font-family: 'Georgia', serif;
-  color: #4a4a2c;
+  color: #3e3a29; /* Darker warm brown */
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Aseguramos que los elementos estén uno debajo del otro */
+  flex-direction: column;
 }
 
 .header-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .recipe-header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .recipe-header h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0;
   font-weight: 700;
-  color: #4a4a2c;
+  color: #3e3a29;
+  letter-spacing: 0.03em;
 }
 
 .recipe-header p {
-  font-size: 1rem;
-  margin: 4px 0 12px 0;
-  color: #6b6b4d;
+  font-size: 1.125rem;
+  margin: 6px 0 16px 0;
+  color: #6e6a53;
+  font-weight: 500;
 }
 
 .search-bar-container {
@@ -43,82 +45,100 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .search-bar-container input[type="search"] {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #c7b89e;
-  font-size: 1rem;
-  width: 100%; /* Ajusta el ancho según sea necesario */
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1.5px solid #d1c7b0;
+  font-size: 1.125rem;
+  width: 100%;
   font-family: 'Georgia', serif;
-  color: #4a4a2c;
+  color: #3e3a29;
+  background-color: #fefcf7;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar-container input[type="search"]:focus {
+  border-color: #c75c2c;
+  outline: none;
 }
 
 .explore-btn {
-  background-color: #c75c2c;
+  background-color: #d1bfa7;
   border: none;
-  color: #fff6e5;
-  padding: 8px 16px;
-  border-radius: 8px;
+  color: #3e3a29;
+  padding: 10px 20px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-left: 12px;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(199, 92, 44, 0.3);
 }
 
 .explore-btn:hover {
-  background-color: #a04a24;
+  background-color: #bfa07f;
 }
 
 .popular-recipes {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 32px auto 0 auto;
 }
 
 .popular-recipes h2 {
   font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  color: #4a4a2c;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #3e3a29;
   text-align: left;
+  letter-spacing: 0.02em;
 }
 
 .recipes-column {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
 
 .recipe-card {
-  background-color: #fff6e5;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(74, 74, 44, 0.15);
-  padding: 16px;
+  background-color: #fff9f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(62, 58, 41, 0.1);
+  padding: 20px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   text-align: left;
-  min-width: 100%; /* Todas las tarjetas tienen el mismo ancho */
-  max-width: 800px; /* Ancho máximo para responsividad */
-  margin: 0 auto; /* Centrar las tarjetas horizontalmente */
+  min-width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .recipe-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
+  box-shadow: 0 6px 14px rgba(62, 58, 41, 0.15);
+}
+
+.recipe-card:focus-visible {
+  outline: 3px solid #d1bfa7;
+  outline-offset: 3px;
 }
 
 .recipe-card-content {
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
 .recipe-image {
   width: 40%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 16px;
   object-fit: cover;
+  box-shadow: 0 2px 8px rgba(199, 92, 44, 0.15);
 }
 
 .recipe-info {
@@ -129,66 +149,87 @@
 }
 
 .recipe-info h3 {
-  font-size: 1.5rem;
-  margin: 0 0 8px 0;
-  color: #4a4a2c;
+  font-size: 1.75rem;
+  margin: 0 0 10px 0;
+  color: #3e3a29;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .recipe-info p {
-  font-size: 1rem;
-  color: #6b6b4d;
-  margin: 4px 0;
+  font-size: 1.125rem;
+  color: #6e6a53;
+  margin: 6px 0;
+  font-weight: 500;
 }
 
 .recipe-info ul {
-  padding-left: 20px;
-  margin: 4px 0;
+  padding-left: 22px;
+  margin: 6px 0;
+  color: #6e6a53;
+  font-weight: 400;
 }
 
 .toggle-steps-btn {
-  margin-top: 12px;
-  background-color: #c75c2c;
+  margin-top: 16px;
+  background-color: #d1bfa7;
   border: none;
-  color: #fff6e5;
-  padding: 8px 12px;
-  border-radius: 8px;
+  color: #3e3a29;
+  padding: 10px 16px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(199, 92, 44, 0.3);
 }
 
 .toggle-steps-btn:hover {
-  background-color: #a04a24;
+  background-color: #bfa07f;
+}
+
+.toggle-steps-btn:focus-visible {
+  outline: 3px solid #bfa07f;
+  outline-offset: 3px;
 }
 
 .steps-dropdown {
-  margin-top: 16px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.steps-dropdown.show {
+  max-height: 1200px;
+  overflow: visible;
 }
 
 .step-card {
-  background-color: #f9f4e9;
-  border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(74, 74, 44, 0.1);
-  padding: 12px;
-  min-width: 100%; /* Todas las tarjetas de pasos tienen el mismo ancho */
-  max-width: 800px; /* Ancho máximo para responsividad */
-  margin: 0 auto; /* Centrar las tarjetas de pasos horizontalmente */
+  background-color: #fefcf7;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(62, 58, 41, 0.1);
+  padding: 16px;
+  min-width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .step-card-content {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
 }
 
 .step-image {
   width: 30%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 16px;
   object-fit: cover;
+  box-shadow: 0 1px 4px rgba(199, 92, 44, 0.15);
 }
 
 .step-info {
@@ -196,13 +237,16 @@
 }
 
 .step-info h4 {
-  margin: 0 0 6px 0;
-  color: #4a4a2c;
-  font-size: 1.2rem;
+  margin: 0 0 8px 0;
+  color: #3e3a29;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .step-info p {
   margin: 0;
-  color: #6b6b4d;
-  font-size: 1rem;
+  color: #6e6a53;
+  font-size: 1.125rem;
+  font-weight: 500;
 }

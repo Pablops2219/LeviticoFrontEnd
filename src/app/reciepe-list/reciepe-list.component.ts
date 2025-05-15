@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-reciepe-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './reciepe-list.component.html',
   styleUrls: ['./reciepe-list.component.css']
 })
@@ -50,7 +52,19 @@ export class ReciepeListComponent {
     }
   ];
 
+  filteredRecipes = [...this.popularRecipes];
+  searchTerm: string = '';
   expandedRecipeIndex: number | null = null;
+
+  private searchSubject = new Subject<string>();
+
+  constructor() {
+    this.searchSubject.pipe(
+      debounceTime(300)
+    ).subscribe(term => {
+      this.filterRecipes(term);
+    });
+  }
 
   toggleSteps(index: number): void {
     if (this.expandedRecipeIndex === index) {
@@ -58,5 +72,28 @@ export class ReciepeListComponent {
     } else {
       this.expandedRecipeIndex = index;
     }
+  }
+
+  isExpanded(index: number): boolean {
+    return this.expandedRecipeIndex === index;
+  }
+
+  onSearchChange(): void {
+    this.searchSubject.next(this.searchTerm);
+  }
+
+  filterRecipes(term: string): void {
+    const lowerTerm = term.toLowerCase();
+    this.filteredRecipes = this.popularRecipes.filter(recipe =>
+      recipe.title.toLowerCase().includes(lowerTerm) ||
+      recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(lowerTerm))
+    );
+    this.expandedRecipeIndex = null; // Collapse any expanded recipe on search
+  }
+
+  onExploreClick(): void {
+    this.searchTerm = '';
+    this.filteredRecipes = [...this.popularRecipes];
+    this.expandedRecipeIndex = null;
   }
 }

@@ -4,20 +4,55 @@
       <h1>GastroTerreta</h1>
       <p>Recetas tradicionales valencianas</p>
     </header>
-    <div class="search-bar-container">
-      <input type="search" placeholder="Buscar" aria-label="Buscar recetas" />
-      <button class="explore-btn">Explorar</button>
-    </div>
+  <div class="search-bar-container">
+    <input
+      type="search"
+      placeholder="Buscar"
+      aria-label="Buscar recetas"
+      [(ngModel)]="searchTerm"
+      (input)="onSearchChange()"
+      aria-describedby="searchHelp"
+    />
+    <button
+      class="explore-btn"
+      aria-label="Explorar recetas"
+      (click)="onExploreClick()"
+    >
+      Explorar
+    </button>
+  </div>
+  <div id="searchHelp" class="visually-hidden">
+    Escribe para buscar recetas por título o ingredientes.
+  </div>
   </div>
 
-  <section class="popular-recipes">
+  <section class="popular-recipes" aria-live="polite" aria-atomic="true">
     <h2>Recetas populares</h2>
     <div class="recipes-column">
-      <div class="recipe-card" *ngFor="let recipe of popularRecipes; let i = index">
+      <div
+        *ngIf="filteredRecipes.length === 0"
+        class="no-results"
+        role="alert"
+        aria-live="assertive"
+      >
+        No se encontraron recetas.
+      </div>
+      <div
+        class="recipe-card"
+        *ngFor="let recipe of filteredRecipes; let i = index"
+        tabindex="0"
+        role="region"
+        [attr.aria-labelledby]="'recipe-title-' + i"
+      >
         <div class="recipe-card-content">
-          <img [src]="recipe.img" [alt]="recipe.title" class="recipe-image" />
+          <img
+            [src]="recipe.img"
+            [alt]="recipe.title"
+            class="recipe-image"
+            loading="lazy"
+          />
           <div class="recipe-info">
-            <h3>{{ recipe.title }}</h3>
+            <h3 id="recipe-title-{{ i }}">{{ recipe.title }}</h3>
             <p>{{ recipe.description }}</p>
             <p><strong>Duración:</strong> {{ recipe.duration }}</p>
             <p><strong>Ingredientes:</strong></p>
@@ -26,13 +61,31 @@
             </ul>
           </div>
         </div>
-        <button (click)="toggleSteps(i)" class="toggle-steps-btn">
+        <button
+          (click)="toggleSteps(i)"
+          class="toggle-steps-btn"
+          [attr.aria-expanded]="isExpanded(i)"
+          [attr.aria-controls]="'steps-' + i"
+          (keydown.enter)="toggleSteps(i)"
+          (keydown.space)="toggleSteps(i)"
+        >
           {{ expandedRecipeIndex === i ? 'Ocultar pasos' : 'Mostrar pasos' }}
         </button>
-        <div *ngIf="expandedRecipeIndex === i" class="steps-dropdown">
+        <div
+          [class.show]="isExpanded(i)"
+          class="steps-dropdown"
+          id="steps-{{ i }}"
+          role="region"
+          [attr.aria-hidden]="!isExpanded(i)"
+        >
           <div *ngFor="let step of recipe.steps" class="step-card">
             <div class="step-card-content">
-              <img [src]="step.img" [alt]="step.name" class="step-image" />
+              <img
+                [src]="step.img"
+                [alt]="step.name"
+                class="step-image"
+                loading="lazy"
+              />
               <div class="step-info">
                 <h4>{{ step.name }}</h4>
                 <p>{{ step.description }}</p>
